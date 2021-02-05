@@ -1,0 +1,14 @@
+{
+  "name": "decorator",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.11.0"
+  }
+}
