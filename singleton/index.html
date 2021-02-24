@@ -1,61 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Singleton</title>
-    <style>
-      #modal {
-        height: 200px;
-        width: 200px;
-        line-height: 200px;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px solid black;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="open">打开弹框</button>
-    <button id="close">关闭弹框</button>
-  </body>
-  <script>
-    class Modal {
-      constructor() {
-        this.modal = null
-      }
-      static getInstance(msg) {
-        if (Modal.modal) {
-          Modal.modal.innerHTML = msg
-          return Modal.modal
-        } else {
-          Modal.modal = document.createElement('div')
-          Modal.modal.id = 'modal'
-          Modal.modal.innerHTML = msg
-          Modal.modal.draggable = true
-          Modal.modal.style.display = 'none'
-          Modal.modal.ondragend = e => {
-            console.log(e)
-            let { x, y } = e
-            Modal.modal.style.left = x + 'px'
-            Modal.modal.style.top = y + 'px'
-          }
-          document.body.appendChild(Modal.modal)
-          return Modal.modal
-        }
-      }
+<div>
+  <style>
+    #modal {
+      height: 200px;
+      width: 200px;
+      line-height: 200px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid black;
+      text-align: center;
     }
-    let index = 1
-    document.querySelector('#open').addEventListener('click', () => {
-      const modal = Modal.getInstance(`第${index}个弹窗`)
-      modal.style.display = 'block'
-      index++
-    })
-    document.querySelector('#close').addEventListener('click', () => {
-      document.querySelector('#modal').style.display = 'none'
-    })
-  </script>
-</html>
+  </style>
+  <button id="open">打开弹框</button>
+  <button id="close">关闭弹框</button>
+</div>

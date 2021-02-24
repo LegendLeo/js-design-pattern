@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-  <script>
+
     function cloneLoop(obj) {
       function getType(obj) {
         return Object.prototype.toString.call(obj).slice(8, -1)
@@ -107,5 +99,3 @@
     console.log(obj)
     let obj1 = cloneForce(obj)
     console.info(obj1)
-  </script>
-</html>
